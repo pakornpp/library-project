@@ -1,0 +1,43 @@
+body{
+    display: flex;
+    gap: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background-color: aquamarine;
+    padding: 20px;
+    border: solid black 1px;
+    border-radius: 10px;
+    width: 150px;
+    height: 70;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    background-color: beige;
+}
+
+.buttons{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.card-button {
+    align-self: center;
+    padding: 5px;
+}
