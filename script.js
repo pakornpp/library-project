@@ -87,7 +87,12 @@ function displayBooks()
 function handleSubmit()
 {
     const inputElement = document.querySelector("#input-title");
-    const title = inputElement.value; // Get the title
+    const title = inputElement.value;
+
+    if(title.length < 2) {
+        return;
+    }
+
     inputElement.value = '';
 
     const newBook = new Book(title);
@@ -106,4 +111,16 @@ displayBooks();
 
 const btn = document.querySelector(".submit-button");
 btn.addEventListener("click", handleSubmit);
+
+// Form validation
+const input = document.getElementById("input-title");
+input.addEventListener("input", () => {
+    input.reportValidity();
+    if(input.validity.tooShort) {
+        input.setCustomValidity("Too short!");
+    }
+    else {
+        input.setCustomValidity("");
+    }
+});
 
